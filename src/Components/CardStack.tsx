@@ -1,9 +1,11 @@
-import { FcRating } from "react-icons/fc";
+
+import { useState } from "react";
 import type { Itecnology } from "../types/technologyType";
+import { GiCancel } from "react-icons/gi";
 
 
 const CardStack = ({ technology }) => {
-
+    const [selected, setSelected] = useState<Itecnology[]>([]);
     return (
         <div className="grid grid-cols-12 gap-4">
             <div className="col-span-9">
@@ -11,13 +13,13 @@ const CardStack = ({ technology }) => {
                     {
                         technology.map((tech: Itecnology) => {
                             return (
-                                <div className="card bg-base-100 my-3  shadow-sm">
-                                    
+                                <div key={tech.id} className="card bg-base-100 my-3  shadow-sm">
+
                                     <div className="card-body">
                                         <div className="flex justify-between items-center">
-                                        <img src={tech.icon}></img>
-                                        <h2 className="p-2 m-2 rounded-2xl bg-[#E0F2FE]">{tech.badge}</h2>
-                                    </div>
+                                            <img src={tech.icon}></img>
+                                            <h2 className="p-2 m-2 rounded-2xl bg-[#E0F2FE]">{tech.badge}</h2>
+                                        </div>
                                         <h2 className="card-title font-extrabold">{tech.name}</h2>
                                         <p>{tech.description}</p>
                                         <div className="flex justify-between my-4 items-center">
@@ -29,11 +31,15 @@ const CardStack = ({ technology }) => {
                                             </div>
                                             <div>
                                                 <div className="flex items-center gap-2">
-                                                    <div><img src="/public/Container.png"></img></div>
-                                                    <div>{tech.rating}</div></div>
+                                                    <div><img className="items-center" src="/Container.png"></img></div>
+                                                    <div className="items-center">{tech.rating}</div></div>
                                             </div>
                                         </div>
-                                        <button className="bg-[#0A0F1D] text-[#FFFFFF] p-3 rounded-xl">Add to Stack</button>
+                                        <div>
+                                            <button onClick={() => setSelected([...selected, tech])}
+                                                className="bg-[#0A0F1D] text-[#FFFFFF] p-3 rounded-xl w-full" disabled={selected.some(element => element.id === tech.id)}>
+                                                {selected.some(element => element.id === tech.id) ? "Selected" : "Add to Stack"}</button>
+                                        </div>
                                     </div>
                                 </div>
                             )
@@ -45,16 +51,36 @@ const CardStack = ({ technology }) => {
                 <div className="card bg-base-100  shadow-sm">
 
                     <div className="card-body">
-                        <h2 className="card-title font-extrabold">
+                        <h2 className="text-2xl font-extrabold">
                             Your Stack
                         </h2>
                         <div>
-                            <p>No technologies selected yet.</p>
+                            <p className="text-lg">{selected.length === 0 ? "No technologies selected yet" : `${selected.length} technologies selected`}</p>
                         </div>
                     </div>
-                    <div className="rounded-xl mx-auto p-8 my-3 border-[#E2E8F0] border-dotted border">
-                        <p>Your stack is empty.</p>
+                    <div className="my-3 mx-4">
+                        {selected.length === 0 ? (<div className="rounded-xl mx-auto p-8 my-3 border-[#E2E8F0] border-dotted border"><p>Your stack is empty.</p></div>) : (<div className="space-y-2">
+                            {selected.map(element => (
+                                <div key={element.id} className="border-[#E2E8F0] border-0.5 flex justify-between border mx-4 p-3 rounded-xl items-center">
+                                    <div className="flex">
+                                        <img className="m-1" src={element.icon}></img>
+                                        <div>
+                                            <div className="font-bold">{element.name}</div>
+                                            <div className="text-[12px]">{element.category}</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button onClick={() => setSelected(selected.filter(tech => tech.id !== element.id))} ><img className="h-10 w-10" src="/public/xmark.png"></img></button></div>
+                                </div>
+                            ))}
+                        </div>
+                        )}
                     </div>
+                    {
+                        selected.length > 0 && (<button onClick={() => setSelected([])}
+                            className="border-[#ED8C85] text-[#D82C20] text-xl rounded-2xl font-extrabold border mx-4 my-4 p-3 ">Remove All</button>)
+                    }
+
                 </div>
             </div>
         </div>
