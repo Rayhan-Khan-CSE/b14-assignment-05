@@ -118,35 +118,6 @@
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Containers"
-  },
-  {
-    "id": 13,
-    "name": "Kubernetes",
-    "category": "DevOps",
-    "description": "A container orchestration system for automating deployment, scaling, and management.",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
-    "rating": 4.7,
-    "difficulty": "Advanced",
-    "badge": "Scalable"
-  },
-  {
-    "id": 14,
-    "name": "Git",
-    "category": "Tools",
-    "description": "A distributed version control system used to track changes and collaborate on code.",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    "rating": 4.9,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Essential"
-  },
-  {
-    "id": 15,
-    "name": "VS Code",
-    "category": "Tools",
-    "description": "A lightweight and powerful code editor with rich extensions and developer tools.",
-    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
-    "rating": 4.9,
-    "difficulty": "Beginner-Friendly",
-    "badge": "Popular"
   }
+  
 ]
