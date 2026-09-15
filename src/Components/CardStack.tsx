@@ -1,10 +1,12 @@
 
 import { useState } from "react";
 import type { Itecnology } from "../types/technologyType";
-import { GiCancel } from "react-icons/gi";
+import { Bounce, toast } from "react-toastify";
+interface CardStackProps {
+    technology: Itecnology[];
+}
 
-
-const CardStack = ({ technology }) => {
+const CardStack = ({ technology }: CardStackProps) => {
     const [selected, setSelected] = useState<Itecnology[]>([]);
     return (
         <div className="grid grid-cols-12 gap-4">
@@ -36,7 +38,20 @@ const CardStack = ({ technology }) => {
                                             </div>
                                         </div>
                                         <div>
-                                            <button onClick={() => setSelected([...selected, tech])}
+                                            <button onClick={() => {
+                                                setSelected([...selected, tech]);
+                                                toast.success(`${tech.name} is added successfully to your stack.`, {
+                                                    position: "bottom-right",
+                                                    autoClose: 5000,
+                                                    hideProgressBar: false,
+                                                    closeOnClick: false,
+                                                    pauseOnHover: true,
+                                                    draggable: true,
+                                                    progress: undefined,
+                                                    theme: "light",
+                                                    transition: Bounce,
+                                                });
+                                            }}
                                                 className="bg-[#0A0F1D] text-[#FFFFFF] p-3 rounded-xl w-full" disabled={selected.some(element => element.id === tech.id)}>
                                                 {selected.some(element => element.id === tech.id) ? "Selected" : "Add to Stack"}</button>
                                         </div>
@@ -70,20 +85,47 @@ const CardStack = ({ technology }) => {
                                         </div>
                                     </div>
                                     <div>
-                                        <button onClick={() => setSelected(selected.filter(tech => tech.id !== element.id))} ><img className="h-10 w-10" src="/public/xmark.png"></img></button></div>
+                                        <button onClick={() => {
+                                            setSelected(selected.filter(tech => tech.id !== element.id));
+                                            toast.error(`${element.name} is removed to your stack`, {
+                                                position: "bottom-right",
+                                                autoClose: 5000,
+                                                hideProgressBar: false,
+                                                closeOnClick: false,
+                                                pauseOnHover: true,
+                                                draggable: true,
+                                                progress: undefined,
+                                                theme: "light",
+                                                transition: Bounce,
+                                            });
+                                        }
+                                        } ><img className="h-10 w-10" src="/xmark.png"></img></button></div>
                                 </div>
                             ))}
                         </div>
                         )}
                     </div>
                     {
-                        selected.length > 0 && (<button onClick={() => setSelected([])}
+                        selected.length > 0 && (<button onClick={() => {setSelected([])
+                            toast.error(`Remove all to your stack`, {
+                                                position: "bottom-right",
+                                                autoClose: 5000,
+                                                hideProgressBar: false,
+                                                closeOnClick: false,
+                                                pauseOnHover: true,
+                                                draggable: true,
+                                                progress: undefined,
+                                                theme: "light",
+                                                transition: Bounce,
+                                            });
+                                        }
+                        }
                             className="border-[#ED8C85] text-[#D82C20] text-xl rounded-2xl font-extrabold border mx-4 my-4 p-3 ">Remove All</button>)
                     }
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
