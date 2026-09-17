@@ -9,22 +9,22 @@ interface CardStackProps {
 const CardStack = ({ technology }: CardStackProps) => {
     const [selected, setSelected] = useState<Itecnology[]>([]);
     return (
-        <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-9">
-                <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+            <div className="col-span-1 md:col-span-9">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                     {
                         technology.map((tech: Itecnology) => {
                             return (
-                                <div key={tech.id} className="card bg-base-100 my-3  shadow-sm">
+                                <div key={tech.id} className="card bg-base-100 my-2 md:my-3  shadow-sm">
 
-                                    <div className="card-body">
+                                    <div className="card-body p-4 md:p-6">
                                         <div className="flex justify-between items-center">
                                             <img src={tech.icon}></img>
                                             <h2 className="p-2 m-2 rounded-2xl bg-[#E0F2FE]">{tech.badge}</h2>
                                         </div>
                                         <h2 className="card-title font-extrabold">{tech.name}</h2>
                                         <p>{tech.description}</p>
-                                        <div className="flex justify-between my-4 items-center">
+                                        <div className="flex justify-between gap-2 my-4 items-center text-sm">
                                             <div>
                                                 <p className="text-[#475569] bg-[#F1F5F9] p-1.5 rounded-xl">{tech.category}</p>
                                             </div>
@@ -62,7 +62,7 @@ const CardStack = ({ technology }: CardStackProps) => {
                     }
                 </div>
             </div>
-            <div className="col-span-3">
+            <div className="col-span-1 md:col-span-3">
                 <div className="card bg-base-100  shadow-sm">
 
                     <div className="card-body">

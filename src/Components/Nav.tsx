@@ -1,9 +1,11 @@
 import logo from "../assets/logo-text.png"
+import logo3 from "../assets/hamburger.png"
 const Nav = () => {
     return (
-        <nav className="max-w-300 mx-auto flex justify-between items-center my-4 ">
+        <nav className="max-w-300 mx-auto flex justify-between items-center my-4 px-4 md:px-0 ">
+                <img src={logo3} className="w-8 h-8 md:hidden"></img>
                 <img src={logo}></img>
-                <ul className="flex items-center gap-4">
+                <ul className="hidden md:flex items-center gap-4">
                     <li><a href="">Home</a></li>
                     <li><a href="">Technologies</a></li>
                     <li><a href="">Projects</a></li>
