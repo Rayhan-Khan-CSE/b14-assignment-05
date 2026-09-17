@@ -17,7 +17,7 @@ function App() {
     <>
      <Nav/>
      <Banner/>
-     <Suspense fallback={<h2>Waiting</h2>}>
+     <Suspense fallback={<h2>loading</h2>}>
      <TechnologyCard technologyPromise={technologyPromise}/>
      </Suspense>
      <ToastContainer />

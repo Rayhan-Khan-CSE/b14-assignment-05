@@ -9,15 +9,15 @@ interface CardStackProps {
 const CardStack = ({ technology }: CardStackProps) => {
     const [selected, setSelected] = useState<Itecnology[]>([]);
     return (
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-            <div className="col-span-1 md:col-span-9">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4">
+            <div className="col-span-1 md:col-span-2 lg:col-span-9">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {
                         technology.map((tech: Itecnology) => {
                             return (
-                                <div key={tech.id} className="card bg-base-100 my-2 md:my-3  shadow-sm">
+                                <div key={tech.id} className="card bg-base-100 my-2 lg:my-3  shadow-sm">
 
-                                    <div className="card-body p-4 md:p-6">
+                                    <div className="card-body p-4 lg:p-6">
                                         <div className="flex justify-between items-center">
                                             <img src={tech.icon}></img>
                                             <h2 className="p-2 m-2 rounded-2xl bg-[#E0F2FE]">{tech.badge}</h2>
@@ -53,7 +53,7 @@ const CardStack = ({ technology }: CardStackProps) => {
                                                 });
                                             }}
                                                 className="bg-[#0A0F1D] text-[#FFFFFF] p-3 rounded-xl w-full" disabled={selected.some(element => element.id === tech.id)}>
-                                                {selected.some(element => element.id === tech.id) ? "Selected" : "Add to Stack"}</button>
+                                                {selected.some(element => element.id === tech.id) ? "✓ Added to Stack" : "Add to Stack"}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@ const CardStack = ({ technology }: CardStackProps) => {
                     }
                 </div>
             </div>
-            <div className="col-span-1 md:col-span-3">
+            <div className="col-span-1 lg:col-span-3">
                 <div className="card bg-base-100  shadow-sm">
 
                     <div className="card-body">
