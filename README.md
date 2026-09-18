@@ -18,6 +18,8 @@ Technology that i use:
 2. Technology Cards
 3. Remove individual or all technology
 
+Questions and Answer:
+
 1. What is JSX, and why is it used in React?
 JSX means JavaScript XML that is a syntax for write HTML like code inside JavaScript. It is used in React because it makes react components easier to read and write.
 

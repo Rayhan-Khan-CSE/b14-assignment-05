@@ -4,7 +4,7 @@
     "name": "React",
     "category": "Frontend",
     "description": "A popular JavaScript library for building interactive user interfaces and single-page applications.",
-    "icon": "../src/assets/React.png",
+    "icon": "./assets/React.png",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular"
@@ -14,7 +14,7 @@
     "name": "Vue.js",
     "category": "Frontend",
     "description": "A progressive JavaScript framework designed for building modern web interfaces with ease.",
-    "icon": "../src/assets/Vue.js.png",
+    "icon": "./assets/Vue.js.png",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
     "badge": "Fast"
@@ -24,7 +24,7 @@
     "name": "Svelte",
     "category": "Frontend",
     "description": "A compiler-based framework that generates highly optimized JavaScript for fast web applications.",
-    "icon": "../src/assets/Svelte.png",
+    "icon": "./assets/Svelte.png",
     "rating": 4.7,
     "difficulty": "Intermediate",
     "badge": "Fast"
@@ -34,7 +34,7 @@
     "name": "Next.js",
     "category": "Frontend",
     "description": "A React framework that provides server-side rendering, routing, and full-stack capabilities.",
-    "icon": "../src/assets/Next.js.png",
+    "icon": "./assets/Next.js.png",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Essential"
@@ -44,7 +44,7 @@
     "name": "Node.js",
     "category": "Backend",
     "description": "A JavaScript runtime that allows developers to build scalable server-side applications.",
-    "icon": "../src/assets/Node.js.png",
+    "icon": "./assets/Node.js.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Popular"
@@ -54,7 +54,7 @@
     "name": "PostgreSQL",
     "category": "Database",
     "description": "A powerful open-source relational database known for reliability and advanced features.",
-    "icon": "../src/assets/PostgreSQL.png",
+    "icon": "./assets/PostgreSQL.png",
     "rating": 4.8,
     "difficulty": "Intermediate",
     "badge": "Essential"
@@ -64,7 +64,7 @@
     "name": "Redis",
     "category": "Database",
     "description": "An in-memory data store commonly used for caching, real-time analytics, and session management.",
-    "icon": "../src/assets/Redis.png",
+    "icon": "./assets/Redis.png",
     "rating": 4.7,
     "difficulty": "Intermediate",
     "badge": "Fast"
@@ -74,7 +74,7 @@
     "name": "JavaScript",
     "category": "Language",
     "description": "The core programming language of the web used for interactive and dynamic applications.",
-    "icon": "../src/assets/JavaScript.png",
+    "icon": "./assets/JavaScript.png",
     "rating": 5.0,
     "difficulty": "Beginner-Friendly",
     "badge": "Essential"
@@ -84,7 +84,7 @@
     "name": "TypeScript",
     "category": "Language",
     "description": "A strongly typed superset of JavaScript that improves code quality and maintainability.",
-    "icon": "../src/assets/TypeScript.png",
+    "icon": "./assets/TypeScript.png",
     "rating": 4.9,
     "difficulty": "Intermediate",
     "badge": "Popular"
@@ -94,7 +94,7 @@
     "name": "Java",
     "category": "Language",
     "description": "A versatile object-oriented programming language widely used for enterprise and Android development.",
-    "icon": "../src/assets/Java.png",
+    "icon": "./assets/Java.png",
     "rating": 4.7,
     "difficulty": "Intermediate",
     "badge": "Essential"
@@ -104,7 +104,7 @@
     "name": "Tailwind CSS",
     "category": "Styling",
     "description": "A utility-first CSS framework for rapidly building custom and responsive user interfaces.",
-    "icon": "../src/assets/Tailwind CSS.png",
+    "icon": "./assets/Tailwind CSS.png",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
     "badge": "Popular"
@@ -114,7 +114,7 @@
     "name": "Docker",
     "category": "DevOps",
     "description": "A containerization platform that helps developers package and deploy applications consistently.",
-    "icon": "../src/assets/Docker.png",
+    "icon": "./assets/Docker.png",
     "rating": 4.8,
     "difficulty": "Advanced",
     "badge": "Containers"
