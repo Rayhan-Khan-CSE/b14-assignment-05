@@ -2,6 +2,8 @@
 import { useState } from "react";
 import type { Itecnology } from "../types/technologyType";
 import { Bounce, toast } from "react-toastify";
+import logo4 from "../assets/Container.png";
+import logo5 from "../assets/xmark.png";
 interface CardStackProps {
     technology: Itecnology[];
 }
@@ -33,7 +35,7 @@ const CardStack = ({ technology }: CardStackProps) => {
                                             </div>
                                             <div>
                                                 <div className="flex items-center gap-2">
-                                                    <div><img className="items-center" src="/Container.png"></img></div>
+                                                    <div><img className="items-center" src={logo4}></img></div>
                                                     <div className="items-center">{tech.rating}</div></div>
                                             </div>
                                         </div>
@@ -99,7 +101,7 @@ const CardStack = ({ technology }: CardStackProps) => {
                                                 transition: Bounce,
                                             });
                                         }
-                                        } ><img className="h-10 w-10" src="/xmark.png"></img></button></div>
+                                        } ><img className="h-10 w-10" src={logo5}></img></button></div>
                                 </div>
                             ))}
                         </div>
